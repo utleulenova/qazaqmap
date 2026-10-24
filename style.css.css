@@ -1991,7 +1991,7 @@ body {
             rgba(246, 237, 222, 0.68),
             rgba(246, 237, 222, 0.68)
         ),
-        url("images/background.png") center top / cover fixed no-repeat !important;
+       url("background.png") center top / cover fixed no-repeat !important;
 }
 /* ===== QAZAQMAP — DARKER WARM PALETTE ===== */
 
@@ -2001,7 +2001,7 @@ body {
             rgba(218, 198, 169, 0.55),
             rgba(218, 198, 169, 0.62)
         ),
-        url("images/background.png") center top / cover fixed no-repeat !important;
+        url("background.png") center top / cover fixed no-repeat !important; 
 
     color: #49382b !important;
 }
@@ -2643,7 +2643,7 @@ body.dark-mode {
             rgba(31, 24, 20, 0.82),
             rgba(31, 24, 20, 0.88)
         ),
-        url("images/background.png") center top / cover fixed no-repeat !important;
+        url("background.png") center top / cover fixed no-repeat !important;
 
     color: #eee1d1 !important;
 }
