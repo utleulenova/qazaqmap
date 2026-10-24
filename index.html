@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css.css">
+</head>
+
+<body>
+
+    <!-- ЖОҒАРҒЫ МЕНЮ -->
+    <header class="topbar">
+
+      <div class="brand">
+    <img src="images/logo.png" alt="QazaqMap"
+     class="brand-logo"
+     style="width: 200px; height: 100px; object-fit: contain; flex-shrink: 0;">
+     
+    <div class="brand-text">
+        <h1>QazaqMap</h1>
+        <p>Жер мен сөздің тарихы</p>
+    </div>
+</div>
+
+        <nav class="nav">
+            <a href="#info" class="nav-link" onclick="showFavorites()">♡ Таңдаулылар</a>
+    <a href="#map-section" class="nav-link active">Карта</a>
+    <a href="#about" class="nav-link">Туралы</a>
+</nav>
+            
+        <div class="search-box">
+            <span>⌕</span>
+            <input
+                type="text"
+                id="writer-search"
+                placeholder="Жазушыны іздеу..."
+                autocomplete="off"
+            >
+            <div id="search-results" class="search-results"></div>
+        </div>
+        <button id="theme-toggle" class="theme-toggle" title="Түсті ауыстыру">
+    ☾
+</button>
+
+    </header>
+
+
+    <!-- НЕГІЗГІ БӨЛІМ -->
+    <main>
+
+        <section class="hero" id="map-section">
+
+            <!-- Сол жақтағы цитата -->
+            <div class="hero-quote">
+                <p>
+                    Әр өңір – бір тарих,<br>
+                    әр жер – бір шабыт.
+                </p>
+
+                <div class="quote-line">
+                    <span></span>
+                    ◆
+                    <span></span>
+                </div>
+            </div>
+
+
+            <!-- КАРТА -->
+            <div class="map-area">
+
+                <object
+                    id="kazakhstan-map"
+                    data="kazakhstan-map-kz.svg"
+                    type="image/svg+xml"
+                    class="kazakhstan-map">
+                </object>
+
+            </div>
+
+<div class="quiz-card" id="quiz-card">
+
+    <!-- ОБЛОЖКА -->
+    <div id="quiz-cover">
+        <div class="quiz-cover-icon">✦</div>
+        <span class="quiz-label">QAZAQMAP · QUIZ</span>
+
+        <h2>Білесің бе?</h2>
+
+        <p class="quiz-cover-text">
+            Қазақ әдебиетінің қызықты әлемін зерттеп көр.
+            Біліміңді тексеруге дайынсың ба?
+        </p>
+
+        <div class="quiz-cover-meta">
+            <span>✧ 15 сұрақ</span>
+            <span>✧ Әдебиет</span>
+        </div>
+
+        <button class="quiz-start-btn" onclick="startQuiz()">
+            Бастау <span>→</span>
+        </button>
+    </div>
+
+    <!-- СҰРАҚТАР -->
+    <div id="quiz-game" hidden>
+        <div class="quiz-game-top">
+            <span class="quiz-label">ӘДЕБИ ВИКТОРИНА</span>
+            <button class="quiz-exit-btn" onclick="resetQuiz()">✕</button>
+        </div>
+
+        <div class="quiz-progress-info">
+            <span id="quiz-counter">1 / 15</span>
+            <span id="quiz-score">Ұпай: 0</span>
+        </div>
+
+        <div class="quiz-progress">
+            <div id="quiz-progress-fill"></div>
+        </div>
+
+        <h3 id="quiz-question"></h3>
+
+        <div class="quiz-options" id="quiz-options"></div>
+
+        <p id="quiz-feedback" class="quiz-feedback" aria-live="polite"></p>
+
+        <button id="quiz-next-btn" class="quiz-start-btn"
+                onclick="nextQuestion()" hidden>
+            Келесі сұрақ <span>→</span>
+        </button>
+    </div>
+
+    <!-- НӘТИЖЕ -->
+    <div id="quiz-result" hidden>
+        <div class="quiz-cover-icon">✧</div>
+        <span class="quiz-label">НӘТИЖЕ</span>
+        <h2>Жарайсың!</h2>
+        <div id="quiz-final-score" class="quiz-final-score"></div>
+        <p id="quiz-result-text" class="quiz-cover-text"></p>
+
+        <button class="quiz-start-btn" onclick="startQuiz()">
+            Қайта ойнау <span>↻</span>
+        </button>
+    </div>
+
+</div>
+
+            <!-- Төменгі көмекші карточка -->
+            <div class="map-tip">
+                <div class="tip-icon">📖</div>
+
+                <div>
+                    <strong>Облысты таңдаңыз,</strong>
+                    <p>сол өңірден шыққан жазушылармен танысыңыз.</p>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!--
+            script.js осы блоктың ішіне
+            облыс пен жазушыларды шығарады.
+        -->
+        <section class="information-section">
+            <div id="info"></div>
+        </section>
+
+
+        <!-- САЙТ ТУРАЛЫ -->
+        <section class="about-section" id="about">
+
+            <p class="section-label">QAZAQMAP</p>
+
+            <h2>Қазақстанның әдеби мұрасын<br>бір картадан таныңыз</h2>
+
+            <p class="about-text">
+                QazaqMap — Қазақстан өңірлерін қазақ әдебиетінің
+                көрнекті тұлғаларымен байланыстыратын интерактивті әдеби карта.
+                Картадан облысты таңдап, сол өңірге қатысты ақын-жазушылар,
+                олардың өмірбаяны мен шығармашылығы туралы ақпарат ала аласыз.
+            </p>
+
+        </section>
+
+    </main>
+
+
+   <footer>
+    <div class="footer-main">
+        <div>
+            <h3>QazaqMap</h3>
+            <p>Қазақстанның интерактивті әдеби картасы</p>
+        </div>
+
+        <div>
+            <span>ИДЕЯ АВТОРЫ:</span>
+            <p>Гаухар Маратовна</p>
+        </div>
+        <div>
+            <span>САЙТ АВТОРЫ:</span>
+            <p>Ұлпан Қайратқызы</p>
+        </div>
+
+        <div>
+            <span>БАЙЛАНЫС:</span>
+            <p>utleulenovaq@gmail.com</p>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        © 2026 QazaqMap
+    </div>
+</footer>
+
+    <!-- БҰРЫНҒЫ JS -->
+    <script src="script.js"></script>
+
+</body>
+</html>

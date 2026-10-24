@@ -1,0 +1,3371 @@
+/* ========================================
+   QAZAQMAP — ӘДЕБИ ҚАЗАҚСТАН
+======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    color: #33251b;
+    background:
+        linear-gradient(
+            rgba(246, 237, 222, 0.86),
+            rgba(229, 211, 185, 0.90)
+        ),
+        radial-gradient(
+            circle at 50% 20%,
+            #fff7e9 0%,
+            #e5cfad 55%,
+            #b9956c 100%
+        );
+
+    min-height: 100vh;
+}
+
+
+/* ========================================
+   HEADER
+======================================== */
+
+.topbar {
+    width: 100%;
+    min-height: 92px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+
+    padding: 18px 4%;
+
+    position: relative;
+    z-index: 10;
+
+    background: rgba(244, 234, 218, 0.82);
+    border-bottom: 1px solid rgba(92, 65, 43, 0.12);
+
+    backdrop-filter: blur(15px);
+}
+
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    min-width: 300px;
+}
+
+
+.brand-icon {
+    font-size: 42px;
+    transform: rotate(-8deg);
+}
+
+
+.brand h1 {
+    font-size: 29px;
+    font-weight: 500;
+    letter-spacing: -0.5px;
+}
+
+
+.brand p {
+    margin-top: 3px;
+
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+
+    color: #8b7765;
+}
+
+
+/* NAV */
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+
+.nav-link {
+    text-decoration: none;
+    color: #39291e;
+
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+
+    padding: 13px 17px;
+    border-radius: 15px;
+
+    transition: 0.25s;
+}
+
+
+.nav-link:hover {
+    background: rgba(120, 88, 59, 0.10);
+}
+
+
+.nav-link.active {
+    background: rgba(128, 94, 62, 0.14);
+    box-shadow: 0 3px 10px rgba(70, 45, 25, 0.08);
+}
+
+
+/* SEARCH */
+
+.search-box {
+    width: 270px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 0 17px;
+
+    border: 1px solid rgba(84, 59, 39, 0.30);
+    border-radius: 30px;
+
+    background: rgba(255, 250, 242, 0.40);
+}
+
+
+.search-box span {
+    font-family: Arial, sans-serif;
+    font-size: 28px;
+    line-height: 1;
+}
+
+
+.search-box input {
+    width: 100%;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    color: #38271d;
+
+    font-size: 14px;
+}
+
+
+.search-box input::placeholder {
+    color: #9a8774;
+}
+
+
+/* ========================================
+   HERO
+======================================== */
+
+.hero {
+    min-height: calc(100vh - 92px);
+
+    position: relative;
+    overflow: hidden;
+
+    padding: 30px 4% 65px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* Атмосфералық фон */
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at 70% 15%,
+            rgba(255, 221, 158, 0.55),
+            transparent 30%
+        ),
+        linear-gradient(
+            to bottom,
+            rgba(248, 236, 216, 0.45),
+            rgba(178, 141, 100, 0.18)
+        );
+
+    pointer-events: none;
+}
+
+
+/* ========================================
+   QUOTE
+======================================== */
+
+.hero-quote {
+    position: absolute;
+
+    left: 4%;
+    top: 55px;
+
+    z-index: 3;
+}
+
+
+.hero-quote p {
+    font-size: clamp(23px, 2vw, 34px);
+    line-height: 1.35;
+
+    font-style: italic;
+}
+
+
+.quote-line {
+    width: 130px;
+
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    margin-top: 16px;
+
+    font-size: 8px;
+    color: #80674f;
+}
+
+
+.quote-line span {
+    height: 1px;
+    flex: 1;
+
+    background: #80674f;
+}
+
+
+/* ========================================
+   MAP
+======================================== */
+
+.map-area {
+    width: min(74vw, 1050px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+    z-index: 2;
+
+    margin-top: 65px;
+}
+
+
+.kazakhstan-map {
+    width: 100%;
+    max-width: 1050px;
+
+    height: 650px;
+
+    border: none;
+
+    filter:
+        drop-shadow(0 20px 28px rgba(65, 42, 25, 0.17));
+}
+
+
+/* ========================================
+   MAP TIP
+======================================== */
+
+.map-tip {
+    position: absolute;
+
+    left: 4%;
+    bottom: 42px;
+
+    z-index: 5;
+
+    display: flex;
+    align-items: center;
+
+    gap: 17px;
+
+    padding: 17px 24px;
+
+    background: rgba(248, 240, 228, 0.88);
+
+    border: 1px solid rgba(89, 64, 44, 0.16);
+    border-radius: 18px;
+
+    box-shadow: 0 12px 35px rgba(67, 44, 28, 0.15);
+
+    backdrop-filter: blur(10px);
+}
+
+
+.tip-icon {
+    font-size: 31px;
+}
+
+
+.map-tip strong {
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+}
+
+
+.map-tip p {
+    margin-top: 5px;
+
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+
+    color: #766351;
+}
+
+
+/* ========================================
+   INFORMATION
+======================================== */
+
+.information-section {
+    width: 100%;
+
+    padding: 15px 4% 80px;
+}
+
+
+#info {
+    width: min(1100px, 100%);
+
+    margin: 0 auto;
+}
+
+
+/* ========================================
+   REGION CARD
+======================================== */
+
+.region-card {
+    overflow: hidden;
+
+    background: rgba(249, 243, 233, 0.96);
+
+    border: 1px solid rgba(91, 63, 41, 0.12);
+    border-radius: 28px;
+
+    box-shadow: 0 22px 55px rgba(67, 43, 26, 0.16);
+}
+
+
+.region-header {
+    position: relative;
+
+    padding: 55px 48px;
+
+    color: #fff8ee;
+
+    background:
+        linear-gradient(
+            120deg,
+            rgba(54, 63, 43, 0.97),
+            rgba(99, 87, 61, 0.93)
+        );
+}
+
+
+.region-header h2 {
+    max-width: 700px;
+
+    font-size: clamp(31px, 4vw, 52px);
+    font-weight: 500;
+
+    line-height: 1.05;
+}
+
+
+.region-header p {
+    margin-top: 12px;
+
+    font-family: Arial, sans-serif;
+
+    opacity: 0.82;
+}
+
+
+.close-btn {
+    position: absolute;
+
+    right: 25px;
+    top: 22px;
+
+    width: 42px;
+    height: 42px;
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.12);
+
+    color: white;
+
+    font-size: 20px;
+
+    cursor: pointer;
+}
+
+
+/* ========================================
+   TABS
+======================================== */
+
+.region-tabs {
+    display: flex;
+
+    padding: 12px;
+
+    gap: 7px;
+
+    border-bottom: 1px solid rgba(80, 55, 36, 0.10);
+
+    background: #eee2d1;
+}
+
+
+.region-tab {
+    flex: 1;
+
+    border: none;
+
+    padding: 13px 15px;
+
+    border-radius: 12px;
+
+    background: transparent;
+
+    color: #705c49;
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+    transition: 0.2s;
+}
+
+
+.region-tab:hover {
+    background: rgba(104, 74, 49, 0.08);
+}
+
+
+.region-tab.active {
+    color: white;
+
+    background: #65452e;
+
+    box-shadow: 0 5px 15px rgba(72, 46, 29, 0.20);
+}
+
+
+/* ========================================
+   WRITERS
+======================================== */
+
+.writers-list {
+    padding: 24px;
+
+    display: grid;
+    gap: 14px;
+}
+
+
+.writer-card {
+    display: grid;
+    grid-template-columns: 110px 1fr 50px;
+
+    gap: 20px;
+
+    align-items: center;
+
+    padding: 14px;
+
+    border-radius: 18px;
+
+    background: rgba(255, 252, 247, 0.90);
+
+    border: 1px solid rgba(83, 59, 40, 0.08);
+
+    transition: 0.25s;
+}
+
+
+.writer-card:hover {
+    transform: translateY(-2px);
+
+    box-shadow: 0 10px 25px rgba(66, 43, 27, 0.11);
+}
+
+
+.writer-photo {
+    width: 110px;
+    height: 125px;
+
+    object-fit: cover;
+    object-position: center top;
+
+    border-radius: 14px;
+
+    filter: sepia(0.15);
+}
+
+
+.writer-info h3 {
+    margin-bottom: 6px;
+
+    font-size: 21px;
+}
+
+
+.writer-info p {
+    margin-top: 5px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 14px;
+    line-height: 1.5;
+
+    color: #766453;
+}
+
+
+.writer-arrow {
+    width: 42px;
+    height: 42px;
+
+    border: none;
+    border-radius: 50%;
+
+    color: white;
+    background: #9b7959;
+
+    cursor: pointer;
+
+    font-size: 19px;
+
+    transition: 0.2s;
+}
+
+
+.writer-arrow:hover {
+    transform: translateX(3px);
+
+    background: #68482f;
+}
+
+
+/* ========================================
+   AUTHOR PAGE
+======================================== */
+
+.author-header {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    gap: 35px;
+
+    padding: 42px;
+
+    border-radius: 27px 27px 0 0;
+
+    color: #fff8ee;
+
+    background:
+        linear-gradient(
+            120deg,
+            #414c35,
+            #77654b
+        );
+}
+
+
+.author-photo {
+    width: 220px;
+    height: 250px;
+
+    object-fit: cover;
+    object-position: center top;
+
+    border-radius: 18px;
+
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.22);
+}
+
+
+.author-header h2 {
+    font-size: clamp(31px, 4vw, 48px);
+    font-weight: 500;
+}
+
+
+.author-header p {
+    margin-top: 9px;
+
+    font-family: Arial, sans-serif;
+
+    opacity: 0.84;
+}
+
+
+.author-section {
+    padding: 34px 40px;
+
+    background: #f8f0e5;
+
+    border-bottom: 1px solid rgba(82, 56, 37, 0.10);
+}
+
+
+.author-section h3 {
+    margin-bottom: 17px;
+
+    font-size: 24px;
+}
+
+
+.author-section p {
+    white-space: pre-line;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 16px;
+    line-height: 1.8;
+
+    color: #57483b;
+}
+
+
+/* ========================================
+   WORKS
+======================================== */
+
+.works-grid {
+    display: grid;
+
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(210px, 1fr)
+    );
+
+    gap: 13px;
+}
+
+
+.work-card {
+    padding: 17px;
+
+    border-radius: 13px;
+
+    background: #ede0ce;
+
+    border: 1px solid rgba(91, 65, 43, 0.09);
+
+    font-family: Arial, sans-serif;
+}
+
+
+/* ========================================
+   ABOUT
+======================================== */
+
+.about-section {
+    padding: 100px 8%;
+
+    text-align: center;
+
+    background: #3e392f;
+
+    color: #f4e9da;
+}
+
+
+.section-label {
+    margin-bottom: 17px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 11px;
+
+    letter-spacing: 4px;
+
+    color: #c8a981;
+}
+
+
+.about-section h2 {
+    font-size: clamp(32px, 4vw, 53px);
+
+    font-weight: 400;
+    line-height: 1.15;
+}
+
+
+.about-text {
+    max-width: 720px;
+
+    margin: 27px auto 0;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 15px;
+    line-height: 1.8;
+
+    color: #d5c6b4;
+}
+
+
+/* ========================================
+   FOOTER
+======================================== */
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 35px 6%;
+
+    background: #29251f;
+
+    color: #d9c8b3;
+}
+
+
+footer strong {
+    font-size: 20px;
+}
+
+
+footer p,
+footer span {
+    margin-top: 5px;
+
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+
+    color: #9f8e7c;
+}
+
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 1050px) {
+
+    .topbar {
+        flex-wrap: wrap;
+    }
+
+    .brand {
+        min-width: auto;
+    }
+
+    .nav {
+        order: 3;
+        width: 100%;
+
+        justify-content: center;
+    }
+
+    .hero {
+        padding-top: 100px;
+    }
+
+    .hero-quote {
+        top: 25px;
+    }
+
+    .map-area {
+        width: 96%;
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .topbar {
+        padding: 14px 18px;
+    }
+
+    .brand h1 {
+        font-size: 22px;
+    }
+
+    .brand-icon {
+        font-size: 32px;
+    }
+
+    .search-box {
+        width: 100%;
+    }
+
+    .nav {
+        overflow-x: auto;
+
+        justify-content: flex-start;
+    }
+
+    .nav-link {
+        white-space: nowrap;
+    }
+
+    .hero {
+        min-height: auto;
+
+        padding:
+            125px
+            10px
+            160px;
+    }
+
+    .hero-quote {
+        left: 20px;
+    }
+
+    .map-area {
+        width: 100%;
+
+        margin-top: 20px;
+    }
+
+    .kazakhstan-map {
+        height: 470px;
+    }
+
+    .map-tip {
+        left: 15px;
+        right: 15px;
+        bottom: 35px;
+    }
+
+    .writer-card {
+        grid-template-columns: 80px 1fr 42px;
+
+        gap: 12px;
+    }
+
+    .writer-photo {
+        width: 80px;
+        height: 100px;
+    }
+
+    .author-header {
+        flex-direction: column;
+
+        text-align: center;
+
+        padding: 35px 20px;
+    }
+
+    .author-photo {
+        width: 170px;
+        height: 205px;
+    }
+
+    .author-section {
+        padding: 27px 22px;
+    }
+
+    footer {
+        flex-direction: column;
+
+        gap: 15px;
+
+        text-align: center;
+    }
+}
+/* =========================================
+   REGION — NEW ELEGANT DESIGN
+   Орналасуы өзгермейді!
+========================================= */
+
+.information-section {
+    position: relative;
+    width: 100%;
+    padding: 25px 4% 90px;
+}
+
+#info {
+    width: min(1050px, 92%);
+    margin: 0 auto;
+}
+
+
+/* ===== ОБЛЫС КАРТОЧКАСЫ ===== */
+
+.region-card {
+    overflow: hidden;
+
+    background: #f4eadc;
+
+    border: 1px solid rgba(91, 65, 43, 0.13);
+    border-radius: 24px;
+
+    box-shadow:
+        0 18px 45px rgba(73, 50, 33, 0.12);
+}
+
+
+/* ===== ЖОҒАРҒЫ БӨЛІК ===== */
+
+.region-header {
+    position: relative;
+
+    min-height: 175px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 38px 45px;
+
+    color: #3b2b20;
+
+    background:
+        radial-gradient(
+            circle at 85% 15%,
+            rgba(183, 151, 112, 0.20),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #eee0cc,
+            #e4cfb1
+        );
+
+    border-bottom: 1px solid rgba(91, 65, 43, 0.12);
+}
+
+
+.region-header::before {
+    content: "ӘДЕБИ ӨҢІР";
+
+    margin-bottom: 11px;
+
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+
+    letter-spacing: 3px;
+
+    color: #9b7b5c;
+}
+
+
+.region-header h2 {
+    margin: 0;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 400;
+
+    line-height: 1.08;
+
+    color: #3c291d;
+}
+
+
+.region-header p {
+    margin-top: 10px;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 16px;
+    font-style: italic;
+
+    color: #816b58;
+}
+
+
+/* ===== X ===== */
+
+.close-btn {
+    position: absolute;
+
+    top: 22px;
+    right: 24px;
+
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    border: 1px solid rgba(78, 53, 35, 0.18);
+    border-radius: 50%;
+
+    background: rgba(255, 250, 242, 0.55);
+
+    color: #604936;
+
+    font-family: Arial, sans-serif;
+    font-size: 17px;
+    font-weight: 300;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+
+.close-btn:hover {
+    background: #5c402c;
+    color: #fffaf3;
+
+    transform: rotate(90deg);
+}
+
+
+/* =========================================
+   TABS
+========================================= */
+
+.region-tabs {
+    display: flex;
+
+    gap: 8px;
+
+    padding: 13px 18px;
+
+    background: #f0e4d4;
+
+    border-bottom: 1px solid rgba(91, 65, 43, 0.10);
+}
+
+
+.region-tab {
+    flex: 1;
+
+    padding: 12px 15px;
+
+    border: none;
+    border-radius: 50px;
+
+    background: transparent;
+
+    color: #806a57;
+
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition: all 0.22s ease;
+}
+
+
+.region-tab:hover {
+    background: rgba(118, 86, 59, 0.08);
+
+    color: #493426;
+}
+
+
+.region-tab.active {
+    background: #65472f;
+
+    color: #fffaf3;
+
+    box-shadow:
+        0 5px 15px rgba(81, 54, 34, 0.15);
+}
+
+
+/* =========================================
+   ЖАЗУШЫЛАР
+========================================= */
+
+.writers-list {
+    padding: 22px;
+
+    display: grid;
+    gap: 12px;
+
+    background: #f7efe4;
+}
+
+
+.writer-card {
+    display: grid;
+
+    grid-template-columns: 95px 1fr 46px;
+
+    align-items: center;
+
+    gap: 18px;
+
+    padding: 13px;
+
+    background: rgba(255, 253, 249, 0.82);
+
+    border: 1px solid rgba(96, 68, 46, 0.09);
+    border-radius: 17px;
+
+    box-shadow:
+        0 4px 14px rgba(74, 49, 31, 0.04);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.writer-card:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 25px rgba(74, 49, 31, 0.09);
+}
+
+
+.writer-photo {
+    width: 95px;
+    height: 108px;
+
+    object-fit: cover;
+    object-position: center top;
+
+    border-radius: 13px;
+
+    filter:
+        grayscale(0.15)
+        sepia(0.08);
+}
+
+
+.writer-info h3 {
+    margin: 0 0 6px;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 20px;
+    font-weight: 600;
+
+    color: #3d2a1d;
+}
+
+
+.writer-info p {
+    margin: 3px 0;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 13px;
+    line-height: 1.45;
+
+    color: #84705e;
+}
+
+
+/* =========================================
+   СТРЕЛКА
+========================================= */
+
+.writer-arrow {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    border: 1px solid #a88969;
+    border-radius: 50%;
+
+    background: transparent;
+
+    color: #795a3e;
+
+    font-family: Arial, sans-serif;
+    font-size: 0;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+
+/* өзінің әдемі стрелкасын жасаймыз */
+
+.writer-arrow::after {
+    content: "→";
+
+    font-size: 19px;
+    font-weight: 300;
+
+    line-height: 1;
+}
+
+
+.writer-arrow:hover {
+    background: #674830;
+
+    border-color: #674830;
+
+    color: white;
+
+    transform: translateX(3px);
+}
+
+
+/* =========================================
+   ЖАЗУШЫНЫ АШҚАНДА
+========================================= */
+
+.author-header {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    gap: 30px;
+
+    padding: 38px;
+
+    color: #3b291d;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ead8bd,
+            #f4e9d9
+        );
+
+    border-radius: 24px 24px 0 0;
+}
+
+
+.author-photo {
+    width: 180px;
+    height: 215px;
+
+    object-fit: cover;
+    object-position: center top;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 12px 30px rgba(68, 45, 29, 0.16);
+}
+
+
+.author-header h2 {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 37px;
+    font-weight: 400;
+
+    color: #3b291d;
+}
+
+
+.author-header p {
+    margin-top: 8px;
+
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+
+    color: #816c59;
+}
+
+
+.author-section {
+    padding: 32px 38px;
+
+    background: #f7efe4;
+
+    border-bottom:
+        1px solid rgba(91, 65, 43, 0.09);
+}
+
+
+.author-section h3 {
+    margin-bottom: 15px;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 23px;
+    font-weight: 500;
+
+    color: #453124;
+}
+
+
+.author-section p {
+    white-space: pre-line;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 15px;
+    line-height: 1.8;
+
+    color: #685647;
+}
+
+
+/* шығармалар */
+
+.works-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(190px, 1fr));
+
+    gap: 10px;
+}
+
+
+.work-card {
+    padding: 15px 17px;
+
+    border: 1px solid rgba(104, 75, 51, 0.10);
+    border-radius: 12px;
+
+    background: #eee0cd;
+
+    color: #604b39;
+
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+}
+/* =========================================
+   QAZAQMAP — MAP COLORS
+   Референстегі жұмсақ пастель стиль
+========================================= */
+
+.map-area {
+    position: relative;
+
+    padding: 20px;
+
+    border-radius: 35px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(255, 248, 235, 0.42),
+            transparent 68%
+        );
+}
+
+
+/* SVG карта */
+
+.kazakhstan-map {
+    width: 100%;
+    max-width: 1050px;
+    height: 650px;
+
+    border: none;
+
+    filter:
+        drop-shadow(0 15px 22px rgba(76, 53, 35, 0.18));
+}
+/* =========================================
+   BUTTONS — ӘДЕБИ / PREMIUM STYLE
+========================================= */
+
+/* Картаға оралу */
+.back-btn,
+button[onclick*="closeInfo"] {
+    border: 1px solid rgba(103, 76, 53, 0.18);
+    outline: none;
+
+    padding: 10px 18px;
+
+    border-radius: 999px;
+
+    background: rgba(255, 250, 242, 0.75);
+
+    color: #624936;
+
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    box-shadow: 0 3px 12px rgba(76, 52, 34, 0.06);
+
+    transition: all 0.2s ease;
+}
+
+.back-btn::before,
+button[onclick*="closeInfo"]::before {
+    content: "←";
+    margin-right: 7px;
+}
+
+.back-btn:hover,
+button[onclick*="closeInfo"]:hover {
+    background: #65472f;
+    color: #fffaf2;
+
+    border-color: #65472f;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================
+   ЖАЗУШЫЛАР / ӨҢІР ТУРАЛЫ / НЕГІЗГІ ОРЫНДАР
+========================================= */
+
+.region-tabs {
+    display: flex;
+    gap: 8px;
+
+    padding: 14px 18px;
+
+    background: #f1e6d7;
+
+    border-bottom: 1px solid rgba(92, 65, 44, 0.10);
+}
+
+
+.region-tab {
+    flex: 1;
+
+    border: 1px solid transparent !important;
+    outline: none !important;
+
+    padding: 11px 16px;
+
+    border-radius: 999px !important;
+
+    background: transparent !important;
+
+    color: #7c6653;
+
+    font-family: Arial, sans-serif !important;
+    font-size: 13px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    box-shadow: none !important;
+
+    transition: all 0.2s ease;
+}
+
+
+.region-tab:hover {
+    background: rgba(110, 80, 55, 0.08) !important;
+
+    color: #4d3829;
+}
+
+
+/* таңдалған батырма */
+
+.region-tab.active {
+    background: #674930 !important;
+
+    color: #fffaf2 !important;
+
+    border-color: #674930 !important;
+
+    box-shadow:
+        0 5px 15px rgba(79, 52, 32, 0.16) !important;
+}
+
+
+/* =========================================
+   ЖАЗУШЫ КАРТОЧКАСЫНДАҒЫ СТРЕЛКА
+========================================= */
+
+.writer-arrow {
+    width: 40px;
+    height: 40px;
+
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #a98a6b !important;
+    border-radius: 50% !important;
+
+    background: transparent !important;
+
+    color: #75583f !important;
+
+    font-size: 0 !important;
+
+    cursor: pointer;
+
+    box-shadow: none !important;
+
+    transition: all 0.2s ease;
+}
+
+
+.writer-arrow::after {
+    content: "→";
+
+    font-family: Arial, sans-serif;
+
+    font-size: 18px;
+    font-weight: 300;
+}
+
+
+.writer-arrow:hover {
+    background: #674930 !important;
+
+    border-color: #674930 !important;
+
+    color: white !important;
+
+    transform: translateX(3px);
+}
+/* =========================================
+   BEAUTIFUL REGION TABS
+========================================= */
+
+.region-tabs {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+
+    gap: 0 !important;
+
+    padding: 8px 12px !important;
+
+    background: #f7efe4 !important;
+
+    border-top: 1px solid rgba(93, 67, 47, 0.08) !important;
+    border-bottom: 1px solid rgba(93, 67, 47, 0.12) !important;
+
+    border-radius: 0 !important;
+}
+
+
+/* БАРЛЫҚ TAB */
+
+.region-tab {
+    position: relative !important;
+
+    width: 100% !important;
+
+    padding: 14px 8px 13px !important;
+
+    border: none !important;
+    border-radius: 0 !important;
+
+    background: transparent !important;
+
+    color: #9a8572 !important;
+
+    font-family: Arial, sans-serif !important;
+    font-size: 13px !important;
+    font-weight: 500 !important;
+
+    letter-spacing: 0.1px !important;
+
+    box-shadow: none !important;
+
+    cursor: pointer !important;
+
+    transition:
+        color 0.2s ease,
+        background 0.2s ease !important;
+}
+
+
+/* АРАСЫНДАҒЫ ЖІҢІШКЕ СЫЗЫҚ */
+
+.region-tab:not(:last-child) {
+    border-right:
+        1px solid rgba(99, 72, 51, 0.10) !important;
+}
+
+
+/* HOVER */
+
+.region-tab:hover {
+    color: #563d2b !important;
+
+    background:
+        rgba(118, 87, 61, 0.035) !important;
+}
+
+
+/* ТАҢДАЛҒАН TAB */
+
+.region-tab.active {
+    color: #4c3424 !important;
+
+    background: transparent !important;
+
+    font-weight: 600 !important;
+
+    box-shadow: none !important;
+}
+
+
+/* ТӨМЕНДЕГІ ӘДЕМІ ИНДИКАТОР */
+
+.region-tab.active::after {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    bottom: 3px;
+
+    width: 34px;
+    height: 2px;
+
+    transform: translateX(-50%);
+
+    border-radius: 20px;
+
+    background: #9b7655;
+}
+
+
+/* кнопканы басқандағы көк/қара рамканы алып тастау */
+
+.region-tab:focus,
+.region-tab:active {
+    outline: none !important;
+}
+/* =========================================
+   SOFT TABS — Картаға оралу стилінде
+========================================= */
+
+.region-tabs {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+
+    padding: 14px 18px !important;
+
+    background: #f4eadc !important;
+
+    border-top: 1px solid rgba(100, 73, 51, 0.08) !important;
+    border-bottom: 1px solid rgba(100, 73, 51, 0.08) !important;
+}
+
+
+/* Жазушылар / Өңір туралы / Негізгі орындар */
+
+.region-tab {
+    flex: 1 !important;
+
+    padding: 11px 17px !important;
+
+    border:
+        1px solid rgba(103, 76, 53, 0.16) !important;
+
+    border-radius: 999px !important;
+
+    background:
+        rgba(255, 250, 242, 0.72) !important;
+
+    color: #715844 !important;
+
+    font-family: Arial, sans-serif !important;
+    font-size: 13px !important;
+    font-weight: 500 !important;
+
+    letter-spacing: 0 !important;
+
+    box-shadow:
+        0 3px 10px rgba(77, 52, 34, 0.045) !important;
+
+    cursor: pointer !important;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease !important;
+}
+
+
+/* Бұрынғы астындағы сызықты алып тастаймыз */
+
+.region-tab::after {
+    display: none !important;
+}
+
+
+/* Арасындағы сызықтарды да алып тастаймыз */
+
+.region-tab:not(:last-child) {
+    border-right:
+        1px solid rgba(103, 76, 53, 0.16) !important;
+}
+
+
+/* Курсор апарғанда */
+
+.region-tab:hover {
+    background: #eee0cd !important;
+
+    color: #4f3929 !important;
+
+    border-color:
+        rgba(103, 76, 53, 0.25) !important;
+
+    transform: translateY(-1px) !important;
+
+    box-shadow:
+        0 5px 14px rgba(77, 52, 34, 0.08) !important;
+}
+
+
+/* Таңдалған бөлім */
+
+.region-tab.active {
+    background: #e2cfb6 !important;
+
+    color: #4b3525 !important;
+
+    border-color:
+        rgba(103, 76, 53, 0.24) !important;
+
+    font-weight: 600 !important;
+
+    box-shadow:
+        inset 0 0 0 1px rgba(255,255,255,0.25),
+        0 4px 12px rgba(77,52,34,0.07) !important;
+}
+
+
+/* Басқанда ugly рамка шықпасын */
+
+.region-tab:focus,
+.region-tab:active {
+    outline: none !important;
+}
+/* ===== REGION NAV — FINAL SOFT BUTTONS ===== */
+
+.region-tabs button,
+.region-card button:not(.writer-arrow):not(.close-btn) {
+    appearance: none !important;
+    -webkit-appearance: none !important;
+
+    border: 1px solid rgba(105, 78, 56, 0.16) !important;
+    outline: none !important;
+
+    background: rgba(255, 250, 243, 0.82) !important;
+    color: #6b523e !important;
+
+    padding: 10px 20px !important;
+    margin: 0 4px !important;
+
+    border-radius: 999px !important;
+
+    font-family: Arial, sans-serif !important;
+    font-size: 13px !important;
+    font-weight: 500 !important;
+
+    box-shadow:
+        0 3px 10px rgba(72, 48, 31, 0.06) !important;
+
+    cursor: pointer !important;
+
+    transition: all 0.2s ease !important;
+}
+
+
+/* Үш батырма тұрған жер */
+
+.region-tabs {
+    display: flex !important;
+    align-items: center !important;
+
+    gap: 7px !important;
+
+    padding: 15px 20px !important;
+
+    background: #f4eadc !important;
+
+    border-top: none !important;
+    border-bottom:
+        1px solid rgba(92, 65, 44, 0.08) !important;
+}
+
+
+/* HOVER */
+
+.region-tabs button:hover,
+.region-card button:not(.writer-arrow):not(.close-btn):hover {
+    background: #eee0cd !important;
+
+    border-color:
+        rgba(105, 78, 56, 0.28) !important;
+
+    color: #473326 !important;
+
+    transform: translateY(-1px) !important;
+
+    box-shadow:
+        0 6px 15px rgba(72, 48, 31, 0.09) !important;
+}
+
+
+/* ТАҢДАЛҒАН БӨЛІМ */
+
+.region-tabs button.active,
+.region-tab.active {
+    background: #e2cfb7 !important;
+
+    color: #493426 !important;
+
+    border:
+        1px solid rgba(105, 78, 56, 0.23) !important;
+
+    font-weight: 600 !important;
+
+    box-shadow:
+        inset 0 0 0 1px rgba(255,255,255,0.28),
+        0 3px 10px rgba(72,48,31,0.06) !important;
+}
+/* =========================================
+   QAZAQMAP — ҚАЗАҚША ШРИФТ FIX
+========================================= */
+
+body,
+button,
+input,
+textarea {
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif !important;
+}
+
+
+/* ҮЛКЕН ТАҚЫРЫПТАР */
+
+h1,
+h2,
+h3,
+h4,
+.brand h1,
+.region-header h2,
+.writer-info h3,
+.author-header h2,
+.author-section h3,
+.about-section h2 {
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif !important;
+
+    font-weight: 600 !important;
+
+    letter-spacing: -0.3px !important;
+}
+
+
+/* ОБЛЫС АТАУЫ */
+
+.region-header h2 {
+    font-size: 42px !important;
+    line-height: 1.18 !important;
+
+    margin-top: 8px !important;
+    margin-bottom: 14px !important;
+}
+
+
+/* "ӘДЕБИ ӨҢІР" */
+
+.region-header::before {
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif !important;
+
+    font-size: 11px !important;
+    font-weight: 600 !important;
+
+    line-height: 1.5 !important;
+    letter-spacing: 2.5px !important;
+
+    margin-bottom: 12px !important;
+}
+
+
+/* ОБЛЫС АСТЫНДАҒЫ МӘТІН */
+
+.region-header p {
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif !important;
+
+    font-size: 16px !important;
+    font-weight: 400 !important;
+
+    line-height: 1.55 !important;
+
+    letter-spacing: 0 !important;
+
+    margin-top: 0 !important;
+}
+
+
+/* ЖАЗУШЫЛАР */
+
+.writer-info h3 {
+    font-size: 20px !important;
+    line-height: 1.25 !important;
+}
+
+.writer-info p {
+    font-size: 13px !important;
+    line-height: 1.55 !important;
+}
+
+
+/* ЖАЗУШЫЛАР / ӨҢІР ТУРАЛЫ / НЕГІЗГІ ОРЫНДАР */
+
+.region-tabs button,
+.region-tab {
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif !important;
+
+    font-weight: 500 !important;
+}
+
+
+/* КӘДІМГІ МӘТІН */
+
+.region-card p,
+.author-section p,
+.about-text {
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif !important;
+
+    line-height: 1.7 !important;
+}
+.section-title > strong {
+    display: none !important;
+}
+body {
+    background:
+        linear-gradient(
+            rgba(246, 237, 222, 0.68),
+            rgba(246, 237, 222, 0.68)
+        ),
+        url("images/background.png") center top / cover fixed no-repeat !important;
+}
+/* ===== QAZAQMAP — DARKER WARM PALETTE ===== */
+
+body {
+    background:
+        linear-gradient(
+            rgba(218, 198, 169, 0.55),
+            rgba(218, 198, 169, 0.62)
+        ),
+        url("images/background.png") center top / cover fixed no-repeat !important;
+
+    color: #49382b !important;
+}
+
+
+/* ЖОҒАРҒЫ HEADER */
+.topbar {
+    background: rgba(222, 204, 178, 0.93) !important;
+    border-bottom: 1px solid rgba(83, 61, 43, 0.20) !important;
+}
+
+
+/* КАРТА ТҰРҒАН АЙМАҚ */
+.hero {
+    background: rgba(225, 207, 181, 0.38) !important;
+}
+
+
+/* ОБЛЫС АҚПАРАТЫ */
+.region-card {
+    background: #dfcdb4 !important;
+    border-color: rgba(84, 61, 43, 0.20) !important;
+}
+
+
+/* ОБЛЫС АТАУЫ */
+.region-header {
+    background:
+        radial-gradient(
+            circle at 85% 15%,
+            rgba(126, 94, 63, 0.18),
+            transparent 38%
+        ),
+        linear-gradient(
+            135deg,
+            #dbc5a6,
+            #cdb18d
+        ) !important;
+}
+
+
+/* ТАБТАР ТҰРҒАН ЖЕР */
+.region-tabs {
+    background: #d7c1a3 !important;
+}
+
+
+/* ЖАЗУШЫЛАР БӨЛІМІ */
+.writers-list {
+    background: #e3d3bd !important;
+}
+
+
+/* ЖАЗУШЫ КАРТОЧКАЛАРЫ */
+.writer-card {
+    background: rgba(239, 226, 207, 0.92) !important;
+    border-color: rgba(87, 62, 43, 0.16) !important;
+}
+
+
+/* ЖАЗУШЫ ТУРАЛЫ БӨЛІМ */
+.author-section {
+    background: #e1cfb6 !important;
+}
+
+
+/* МӘТІНДЕР */
+.region-header h2,
+.writer-info h3,
+.author-header h2 {
+    color: #3e2c20 !important;
+}
+
+.region-header p,
+.writer-info p,
+.author-section p {
+    color: #695342 !important;
+}
+.brand {
+    display: flex !important;
+    align-items: center !important;
+    gap: 14px !important;
+}
+
+.brand-icon {
+    width: 58px !important;
+    height: 45px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.brand-icon img {
+    width: 58px !important;
+    height: 42px !important;
+
+    object-fit: contain !important;
+
+    filter: sepia(1) saturate(0.6) brightness(0.55) !important;
+}
+
+.brand h1 {
+    margin: 0 !important;
+
+    font-size: 36px !important;
+    font-weight: 600 !important;
+
+    color: #49372a !important;
+}
+
+.brand p {
+    margin: 3px 0 0 !important;
+
+    font-size: 14px !important;
+    color: #806b58 !important;
+}
+.brand-icon {
+    width: 42px !important;
+    height: 42px !important;
+    border: 1px solid #6b513c !important;
+    border-radius: 50% !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    color: #6b513c !important;
+    font-size: 14px !important;
+}
+/* ===== ОБЛЫС HEADER — WATERMARK MAP ===== */
+
+.region-header {
+    position: relative !important;
+    overflow: hidden !important;
+    isolation: isolate !important;
+}
+
+/* Қазақстан картасы */
+.region-header::after {
+    content: "" !important;
+
+    position: absolute !important;
+    right: 45px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+
+    width: 260px !important;
+    height: 150px !important;
+
+    background: url("kazakhstan-map-kz.svg")
+        center / contain no-repeat !important;
+
+    opacity: 0.18 !important;
+    filter: sepia(1) saturate(0.5) brightness(0.55) !important;
+
+    pointer-events: none !important;
+    z-index: -1 !important;
+}
+
+/* Мәтін картадан жоғары тұрады */
+.region-header h2,
+.region-header p {
+    position: relative !important;
+    z-index: 2 !important;
+    max-width: 65% !important;
+}
+/* ===== REGION HEADER — MORE COMPLETE ===== */
+
+.region-header {
+    min-height: 220px !important;
+    padding: 42px 48px !important;
+}
+
+/* мәтінге орын */
+.region-header h2 {
+    max-width: 62% !important;
+    margin-bottom: 12px !important;
+}
+
+.region-header p {
+    max-width: 58% !important;
+}
+
+/* Карта сәл анықтау */
+.region-header::after {
+    right: 55px !important;
+    width: 300px !important;
+    height: 175px !important;
+    opacity: 0.14 !important;
+}
+
+
+/* Төменгі декоратив сызық */
+.region-card {
+    position: relative !important;
+}
+
+.region-header {
+    border-bottom: 1px solid rgba(83, 60, 42, 0.16) !important;
+}
+
+
+/* Әдеби стиль үшін кішкентай белгі */
+.region-header h2::after {
+    content: "QAZAQMAP  •  ӘДЕБИ КАРТА";
+
+    display: block !important;
+
+    width: max-content !important;
+
+    margin-top: 22px !important;
+    padding: 7px 13px !important;
+
+    border: 1px solid rgba(83, 60, 42, 0.18) !important;
+    border-radius: 999px !important;
+
+    font-size: 10px !important;
+    font-weight: 600 !important;
+    letter-spacing: 1.6px !important;
+
+    color: rgba(73, 54, 40, 0.62) !important;
+    background: rgba(255, 248, 237, 0.22) !important;
+}
+/* ===== LIVE SEARCH ===== */
+
+.search-box {
+    position: relative !important;
+}
+
+.search-results {
+    display: none;
+
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+
+    width: 310px;
+
+    padding: 8px;
+
+    background: rgba(239, 226, 207, 0.98);
+
+    border: 1px solid rgba(80, 58, 40, 0.18);
+    border-radius: 18px;
+
+    box-shadow: 0 15px 35px rgba(60, 40, 25, 0.18);
+
+    z-index: 9999;
+}
+
+.search-results.show {
+    display: block;
+}
+
+.search-result-item {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    padding: 11px 14px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: transparent;
+
+    text-align: left;
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.search-result-item:hover {
+    background: rgba(184, 153, 116, 0.20);
+    transform: translateX(3px);
+}
+
+.search-result-item strong {
+    font-size: 14px;
+    color: #443225;
+}
+
+.search-result-item span {
+    margin-top: 3px;
+
+    font-size: 11px;
+    color: #8a725e;
+}
+
+.search-empty {
+    padding: 13px;
+
+    text-align: center;
+
+    font-size: 13px;
+    color: #806b58;
+}
+/* =========================================
+   QAZAQMAP — SMOOTH ANIMATIONS
+========================================= */
+
+/* Облыс ашылғанда */
+.region-card {
+    animation: regionAppear 0.55s ease both;
+}
+
+@keyframes regionAppear {
+    from {
+        opacity: 0;
+        transform: translateY(22px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Жазушы карточкалары */
+.writer-card {
+    animation: writerAppear 0.5s ease both;
+}
+
+.writer-card:nth-child(1) {
+    animation-delay: 0.05s;
+}
+
+.writer-card:nth-child(2) {
+    animation-delay: 0.12s;
+}
+
+.writer-card:nth-child(3) {
+    animation-delay: 0.19s;
+}
+
+.writer-card:nth-child(4) {
+    animation-delay: 0.26s;
+}
+
+.writer-card:nth-child(5) {
+    animation-delay: 0.33s;
+}
+
+@keyframes writerAppear {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Жазушының жеке беті */
+.author-header,
+.author-section {
+    animation: authorAppear 0.55s ease both;
+}
+
+.author-section {
+    animation-delay: 0.08s;
+}
+
+@keyframes authorAppear {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Hover — карточка сәл көтеріледі */
+.writer-card {
+    transition:
+        transform 0.22s ease,
+        box-shadow 0.22s ease !important;
+}
+
+.writer-card:hover {
+    transform: translateY(-4px) !important;
+    box-shadow: 0 13px 28px rgba(72, 48, 31, 0.14) !important;
+}
+/* ===== FAVORITE BUTTON ===== */
+
+.favorite-btn {
+    margin-top: 16px;
+    padding: 10px 17px;
+
+    border: 1px solid rgba(92, 67, 48, 0.20);
+    border-radius: 999px;
+
+    background: rgba(255, 250, 242, 0.72);
+    color: #654b38;
+
+    font-size: 13px;
+    font-weight: 500;
+
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.favorite-btn:hover {
+    background: #ead9c4;
+    transform: translateY(-2px);
+}
+
+.favorite-btn.saved {
+    background: #72503b;
+    color: #fff8ef;
+    border-color: #72503b;
+}
+/* ===== FAVORITES PAGE ===== */
+
+.favorites-page {
+    width: min(900px, 92%);
+    margin: 0 auto;
+    padding: 38px;
+    border-radius: 24px;
+
+    background: rgba(244, 234, 220, 0.94);
+    box-shadow: 0 18px 45px rgba(65, 45, 30, 0.12);
+
+    animation: regionAppear 0.5s ease both;
+}
+
+.favorites-page h2 {
+    margin: 8px 0 5px;
+    font-size: 36px;
+    color: #463225;
+}
+
+.favorites-subtitle {
+    margin-bottom: 25px;
+    color: #8a725e;
+}
+
+.favorites-grid {
+    display: grid;
+    gap: 12px;
+}
+
+.favorite-card {
+    width: 100%;
+    padding: 12px;
+
+    display: grid;
+    grid-template-columns: 70px 1fr 42px;
+    align-items: center;
+    gap: 15px;
+
+    border: 1px solid rgba(90, 65, 45, 0.12);
+    border-radius: 16px;
+
+    background: rgba(255, 250, 243, 0.78);
+
+    text-align: left;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.favorite-card:hover {
+    transform: translateY(-2px);
+    background: #fffaf3;
+    box-shadow: 0 8px 20px rgba(70, 48, 32, 0.10);
+}
+
+.favorite-photo {
+    width: 70px;
+    height: 78px;
+    object-fit: cover;
+    border-radius: 11px;
+}
+
+.favorite-card-info h3 {
+    margin: 0 0 5px;
+    color: #443126;
+    font-size: 18px;
+}
+
+.favorite-card-info p {
+    margin: 0;
+    color: #8a725e;
+    font-size: 12px;
+}
+
+.favorite-card-arrow {
+    font-size: 20px;
+    color: #765943;
+}
+
+.favorites-empty {
+    padding: 45px 20px;
+    text-align: center;
+}
+
+.empty-heart {
+    font-size: 45px;
+    color: #98775d;
+}
+
+.favorites-empty p {
+    margin: 10px 0 4px;
+    font-weight: 600;
+    color: #4f392a;
+}
+
+.favorites-empty span {
+    font-size: 12px;
+    color: #927965;
+}
+/* ===== DID YOU KNOW? ===== */
+
+.fact-card {
+    margin: 20px 22px 25px;
+    padding: 22px 24px;
+
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(224, 205, 180, 0.78),
+            rgba(247, 238, 225, 0.90)
+        );
+
+    border: 1px solid rgba(101, 72, 48, 0.13);
+    border-radius: 18px;
+
+    box-shadow: 0 8px 25px rgba(70, 47, 30, 0.07);
+
+    animation: factAppear 0.5s ease both;
+}
+
+.fact-icon {
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+
+    background: #72523b;
+    color: #fff8ed;
+
+    font-size: 17px;
+}
+
+.fact-content span {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2.3px;
+    color: #98775d;
+}
+
+.fact-content p {
+    margin: 8px 0 12px;
+
+    max-width: 720px;
+
+    font-size: 15px;
+    line-height: 1.65;
+
+    color: #493529;
+
+    transition: opacity 0.18s ease;
+}
+
+.next-fact-btn {
+    padding: 0;
+
+    border: none;
+    background: transparent;
+
+    color: #76543c;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.next-fact-btn:hover {
+    text-decoration: underline;
+}
+
+@keyframes factAppear {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* ========================================
+   QAZAQMAP — DARK MODE
+   ======================================== */
+
+.theme-toggle {
+    width: 42px;
+    height: 42px;
+    border: 1px solid rgba(91, 63, 43, 0.18);
+    border-radius: 50%;
+    background: rgba(255, 248, 237, 0.75);
+    color: #654832;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.theme-toggle:hover {
+    transform: translateY(-2px);
+    background: #fff8ed;
+}
+
+/* DARK MODE */
+
+body.dark-mode {
+    background:
+        linear-gradient(
+            rgba(31, 24, 20, 0.82),
+            rgba(31, 24, 20, 0.88)
+        ),
+        url("images/background.png") center top / cover fixed no-repeat !important;
+
+    color: #eee1d1 !important;
+}
+
+body.dark-mode header,
+body.dark-mode .header {
+    background: rgba(42, 32, 26, 0.92) !important;
+    color: #f5e9da !important;
+}
+
+body.dark-mode .nav-link {
+    color: #e5d3bf !important;
+}
+
+body.dark-mode .nav-link:hover,
+body.dark-mode .nav-link.active {
+    background: #6f523d !important;
+    color: #fff7ec !important;
+}
+
+body.dark-mode .search-box {
+    background: rgba(74, 57, 46, 0.92) !important;
+    border-color: rgba(255,255,255,0.10) !important;
+}
+
+body.dark-mode .search-box input {
+    background: transparent !important;
+    color: #f5e9da !important;
+}
+
+body.dark-mode .search-box input::placeholder {
+    color: #bca995 !important;
+}
+
+body.dark-mode .region-card,
+body.dark-mode .author-page,
+body.dark-mode .favorites-page {
+    background: rgba(54, 42, 34, 0.94) !important;
+    color: #eee1d1 !important;
+    border-color: rgba(255,255,255,0.08) !important;
+}
+
+body.dark-mode .writer-card,
+body.dark-mode .favorite-card {
+    background: rgba(69, 53, 42, 0.92) !important;
+    color: #eee1d1 !important;
+    border-color: rgba(255,255,255,0.08) !important;
+}
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3 {
+    color: #f4e7d7 !important;
+}
+
+body.dark-mode p {
+    color: #d8c7b5 !important;
+}
+
+body.dark-mode .tab-btn,
+body.dark-mode .back-btn {
+    background: #604936 !important;
+    color: #f5e9da !important;
+    border-color: rgba(255,255,255,0.09) !important;
+}
+
+body.dark-mode .tab-btn.active {
+    background: #947052 !important;
+    color: #fffaf2 !important;
+}
+
+body.dark-mode .fact-card {
+    background: linear-gradient(
+        135deg,
+        rgba(92, 69, 51, 0.95),
+        rgba(61, 47, 38, 0.96)
+    ) !important;
+
+    border-color: rgba(255,255,255,0.08) !important;
+}
+
+body.dark-mode .fact-content p {
+    color: #eadccc !important;
+}
+
+body.dark-mode .theme-toggle {
+    background: #72543e;
+    color: #fff3e4;
+    border-color: rgba(255,255,255,0.12);
+}
+
+body.dark-mode footer {
+    background: rgba(39, 29, 24, 0.96) !important;
+    color: #d8c7b5 !important;
+}
+
+/* =========================================
+   QAZAQMAP — MOBILE FINAL (CLEAN)
+   ========================================= */
+@media screen and (max-width: 768px) {
+
+    html,
+    body {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow-x: hidden !important;
+    }
+
+    .topbar {
+        width: 100% !important;
+        max-width: 100% !important;
+        flex-wrap: wrap !important;
+        gap: 12px !important;
+        padding: 14px 16px !important;
+        box-sizing: border-box !important;
+    }
+
+    .brand {
+        min-width: 0 !important;
+    }
+
+    .brand h1 {
+        font-size: 28px !important;
+    }
+
+    .brand p {
+        font-size: 12px !important;
+    }
+
+    .search-box {
+        width: 100% !important;
+        max-width: none !important;
+        flex: 1 1 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    .nav {
+        order: 3 !important;
+        width: 100% !important;
+        justify-content: flex-start !important;
+        gap: 4px !important;
+        overflow-x: auto !important;
+        white-space: nowrap !important;
+        scrollbar-width: none !important;
+    }
+
+    .nav::-webkit-scrollbar {
+        display: none !important;
+    }
+
+    .nav-link {
+        flex: 0 0 auto !important;
+        white-space: nowrap !important;
+        font-size: 12px !important;
+        padding: 9px 10px !important;
+    }
+
+    .hero {
+        min-height: auto !important;
+        padding: 110px 10px 120px !important;
+        overflow: hidden !important;
+        box-sizing: border-box !important;
+    }
+
+    .hero-quote {
+        left: 20px !important;
+        right: 20px !important;
+        top: 24px !important;
+    }
+
+    .hero-quote p {
+        font-size: 22px !important;
+        line-height: 1.35 !important;
+    }
+
+    /* MAP: no zoom, no translate, no fixed desktop width */
+    .map-area {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-top: 15px !important;
+        padding: 0 !important;
+        display: block !important;
+        position: relative !important;
+        overflow: visible !important;
+        box-sizing: border-box !important;
+    }
+
+    #kazakhstan-map,
+    .kazakhstan-map {
+        position: static !important;
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        height: auto !important;
+        aspect-ratio: 1000 / 549 !important;
+        margin: 0 auto !important;
+        padding: 0 !important;
+        transform: none !important;
+        border: 0 !important;
+    }
+
+    .map-tip {
+        left: 12px !important;
+        right: 12px !important;
+        bottom: 24px !important;
+        width: auto !important;
+        max-width: none !important;
+        padding: 14px 16px !important;
+        gap: 12px !important;
+        box-sizing: border-box !important;
+    }
+
+    .tip-icon {
+        font-size: 26px !important;
+    }
+
+    .map-tip strong {
+        font-size: 13px !important;
+    }
+
+    .map-tip p {
+        font-size: 11px !important;
+    }
+
+    .information-section {
+        padding: 15px 10px 60px !important;
+    }
+
+    #info {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    .region-card,
+    .author-page,
+    .favorites-page {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    .region-header {
+        min-height: auto !important;
+        padding: 34px 20px !important;
+    }
+
+    .region-header h2 {
+        max-width: 100% !important;
+        font-size: 30px !important;
+    }
+
+    .region-header p {
+        max-width: 100% !important;
+        font-size: 14px !important;
+    }
+
+    .region-header::after {
+        right: -40px !important;
+        width: 220px !important;
+        opacity: 0.07 !important;
+    }
+
+    .region-header h2::after {
+        display: none !important;
+    }
+
+    .region-tabs {
+        display: flex !important;
+        gap: 8px !important;
+        padding: 12px !important;
+        overflow-x: auto !important;
+        white-space: nowrap !important;
+        scrollbar-width: none !important;
+    }
+
+    .region-tabs::-webkit-scrollbar {
+        display: none !important;
+    }
+
+    .region-tabs button,
+    .region-tab {
+        flex: 0 0 auto !important;
+        min-width: 120px !important;
+        margin: 0 !important;
+    }
+
+    .writers-list {
+        padding: 12px !important;
+    }
+
+    .writer-card {
+        grid-template-columns: 72px minmax(0, 1fr) 36px !important;
+        gap: 10px !important;
+        padding: 10px !important;
+    }
+
+    .writer-photo {
+        width: 72px !important;
+        height: 88px !important;
+    }
+
+    .writer-info h3 {
+        font-size: 17px !important;
+    }
+
+    .writer-info p {
+        font-size: 12px !important;
+    }
+
+    .writer-arrow {
+        width: 36px !important;
+        height: 36px !important;
+    }
+
+    .author-header {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        text-align: left !important;
+        gap: 18px !important;
+        padding: 28px 18px !important;
+    }
+
+    .author-photo {
+        width: 150px !important;
+        height: 180px !important;
+    }
+
+    .author-header h2 {
+        font-size: 30px !important;
+    }
+
+    .author-section {
+        padding: 24px 18px !important;
+    }
+
+    .fact-card {
+        margin: 14px 12px 20px !important;
+        padding: 16px !important;
+        gap: 12px !important;
+    }
+
+    .favorites-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    footer {
+        flex-direction: column !important;
+        gap: 15px !important;
+        text-align: center !important;
+        padding: 28px 18px !important;
+    }
+}
+@media (max-width: 700px) {
+    .map-area {
+        width: 108% !important;
+        max-width: none !important;
+    }
+
+    .kazakhstan-map {
+        width: 108% !important;
+        max-width: none !important;
+    }
+}
+/* ===== SHARE BUTTON ===== */
+
+.share-btn {
+    margin-top: 16px;
+    margin-left: 8px;
+
+    padding: 10px 17px;
+
+    border: 1px solid rgba(92, 67, 48, 0.20);
+    border-radius: 999px;
+
+    background: rgba(255, 250, 243, 0.65);
+    color: #604936;
+
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.share-btn:hover {
+    background: #65472f;
+    color: #fffaf2;
+
+    transform: translateY(-1px);
+}
+
+/* телефон */
+@media (max-width: 768px) {
+    .share-btn {
+        margin-left: 5px;
+        padding: 9px 14px;
+        font-size: 12px;
+    }
+}
+/* FOOTER — ORTADA */
+footer {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+footer .footer-content,
+footer .footer-inner,
+footer .footer-container {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+}
+/* FOOTER-ді толық ортаға қою */
+footer {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+    width: 100% !important;
+    box-sizing: border-box;
+}
+
+footer > * {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+}
+/* ТЕК ЛОГОТИП */
+.brand-logo {
+    width: 200px !important;
+    height: 100px !important;
+    object-fit: contain !important;
+    flex-shrink: 0 !important;
+    display: block !important;
+}
+/* ӘДЕБИ ВИКТОРИНА */
+.quiz-card {
+    position: absolute;
+    right: 4%;
+    top: 48%;
+    transform: translateY(-20%);
+    z-index: 4;
+
+    width: 270px;
+    padding: 24px;
+
+    background: rgba(248, 239, 224, 0.94);
+    border: 1px solid rgba(110, 79, 53, 0.2);
+    border-radius: 22px;
+
+    box-shadow: 0 16px 40px rgba(70, 46, 27, 0.14);
+    backdrop-filter: blur(12px);
+}
+
+.quiz-card-top {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.quiz-icon {
+    color: #9b7047;
+    font-size: 23px;
+}
+
+.quiz-label {
+    color: #997653;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+}
+
+.quiz-card h2 {
+    margin: 17px 0 10px;
+    color: #493222;
+    font-family: Georgia, serif;
+    font-size: 27px;
+}
+
+.quiz-question {
+    color: #6f5945;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 16px;
+}
+
+.quiz-options {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.quiz-options button {
+    padding: 11px 12px;
+    border: 1px solid #dfcbb1;
+    border-radius: 11px;
+    background: #fffaf2;
+    color: #563c29;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.quiz-options button:hover {
+    background: #e9d7bd;
+    transform: translateX(3px);
+}
+
+.quiz-feedback {
+    margin-top: 15px;
+    font-size: 12px;
+    color: #80674f;
+    line-height: 1.5;
+}
+
+@media (max-width: 1000px) {
+    .quiz-card {
+        position: relative;
+        top: auto;
+        right: auto;
+        transform: none;
+        width: min(100%, 360px);
+        margin: 20px auto;
+    }
+}
+/* QAZAQMAP QUIZ */
+.quiz-card {
+    position: absolute;
+    right: 4%;
+    top: 48%;
+    transform: translateY(-20%);
+    z-index: 4;
+    width: 290px;
+    box-sizing: border-box;
+    padding: 25px;
+    border: 1px solid #dfc8aa;
+    border-radius: 24px;
+    background: rgba(250, 242, 228, 0.97);
+    box-shadow: 0 18px 45px rgba(76, 48, 28, 0.15);
+    color: #503725;
+}
+
+.quiz-card [hidden] {
+    display: none !important;
+}
+
+.quiz-cover-icon {
+    width: 48px;
+    height: 48px;
+    display: grid;
+    place-items: center;
+    margin-bottom: 17px;
+    border: 1px solid #c8a77e;
+    border-radius: 50%;
+    color: #8a633e;
+    font-size: 25px;
+}
+
+.quiz-label {
+    color: #997653;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.6px;
+}
+
+.quiz-card h2 {
+    margin: 12px 0;
+    font-family: Georgia, serif;
+    font-size: 30px;
+    color: #503725;
+}
+
+.quiz-cover-text {
+    color: #806850;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.quiz-cover-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 18px 0;
+    color: #876747;
+    font-size: 11px;
+}
+
+.quiz-start-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    width: 100%;
+    padding: 13px 16px;
+    margin-top: 18px;
+    border: 0;
+    border-radius: 12px;
+    background: #68472f;
+    color: #fff7ec;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.quiz-start-btn:hover {
+    background: #805a3c;
+    transform: translateY(-2px);
+}
+
+.quiz-game-top,
+.quiz-progress-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.quiz-exit-btn {
+    border: 0;
+    background: transparent;
+    color: #806850;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.quiz-progress-info {
+    margin-top: 18px;
+    color: #806850;
+    font-size: 11px;
+}
+
+.quiz-progress {
+    height: 4px;
+    margin: 10px 0 20px;
+    overflow: hidden;
+    border-radius: 10px;
+    background: #e8d8c3;
+}
+
+#quiz-progress-fill {
+    width: 0;
+    height: 100%;
+    border-radius: inherit;
+    background: #896342;
+    transition: width 0.25s;
+}
+
+.quiz-card h3 {
+    margin: 0 0 17px;
+    color: #503725;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.quiz-options {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.quiz-options button {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #dfcbb1;
+    border-radius: 11px;
+    background: #fffaf2;
+    color: #563c29;
+    text-align: left;
+    line-height: 1.45;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.quiz-options button:hover:not(:disabled) {
+    background: #efe0cb;
+}
+
+.quiz-options button:disabled {
+    cursor: default;
+    opacity: 1;
+}
+
+.quiz-options button.correct {
+    border-color: #73906a;
+    background: #e2ebdc;
+}
+
+.quiz-options button.incorrect {
+    border-color: #bc8978;
+    background: #f2dfd7;
+}
+
+.quiz-feedback {
+    min-height: 18px;
+    margin: 12px 0;
+    color: #806850;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.quiz-final-score {
+    margin: 20px 0 10px;
+    color: #805a3c;
+    font-family: Georgia, serif;
+    font-size: 42px;
+    font-weight: 700;
+}
+
+@media (max-width: 1000px) {
+    .quiz-card {
+        position: relative;
+        top: auto;
+        right: auto;
+        transform: none;
+        width: min(100% - 32px, 360px);
+        margin: 24px auto;
+    }
+}
