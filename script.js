@@ -1106,11 +1106,9 @@ scrollToInfo();
     let writersHTML = "";
 
     data.writers.forEach(writer => {
-
-               const photo = writer.image
-    ? `<img src="./${writer.image}" class="writer-photo" alt="${writer.name}" onerror="this.style.display='none'">`
+const photo = writer.image
+    ? `<img src="https://utleulenova.github.io/qazaqmap/${writer.image}" class="writer-photo" alt="${writer.name}" style="display:block;width:100px;height:120px;object-fit:cover;flex-shrink:0;">`
     : `<div class="writer-photo writer-placeholder">✒️</div>`;
-
         writersHTML += `
             <div class="writer-card">
                 ${photo}
@@ -1216,9 +1214,8 @@ function showRegionTab(id, tab, button) {
         `;
 
         data.writers.forEach(writer => {
-
-                        const photo = writer.image
-    ? `<img src="./${writer.image}" class="writer-photo" alt="${writer.name}" onerror="this.style.display='none'">`
+const photo = writer.image
+    ? `<img src="https://utleulenova.github.io/qazaqmap/${writer.image}" class="writer-photo" alt="${writer.name}" style="display:block;width:100px;height:120px;object-fit:cover;flex-shrink:0;">`
     : `<div class="writer-photo writer-placeholder">✒️</div>`;
             html += `
                 <div class="writer-card">
