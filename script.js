@@ -1107,9 +1107,9 @@ scrollToInfo();
 
     data.writers.forEach(writer => {
 
-        const photo = writer.image
-            ? `<img src="${writer.image}" class="writer-photo" alt="${writer.name}">`
-            : `<div class="writer-photo writer-placeholder">✒️</div>`;
+               const photo = writer.image
+    ? `<img src="./${writer.image}" class="writer-photo" alt="${writer.name}" onerror="this.style.display='none'">`
+    : `<div class="writer-photo writer-placeholder">✒️</div>`;
 
         writersHTML += `
             <div class="writer-card">
@@ -1217,10 +1217,9 @@ function showRegionTab(id, tab, button) {
 
         data.writers.forEach(writer => {
 
-            const photo = writer.image
-                ? `<img src="${writer.image}" class="writer-photo" alt="${writer.name}">`
-                : `<div class="writer-photo writer-placeholder">✒️</div>`;
-
+                        const photo = writer.image
+    ? `<img src="./${writer.image}" class="writer-photo" alt="${writer.name}" onerror="this.style.display='none'">`
+    : `<div class="writer-photo writer-placeholder">✒️</div>`;
             html += `
                 <div class="writer-card">
                     ${photo}
