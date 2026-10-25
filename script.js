@@ -1462,7 +1462,7 @@ const writerImages = {
 Object.values(literatureData).forEach(region => {
     region.writers.forEach(writer => {
         if (writerImages[writer.id]) {
-            writer.image = "images/" + writerImages[writer.id];
+            writer.image = writerImages[writer.id];
         }
     });
 });
